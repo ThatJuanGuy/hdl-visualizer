@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.Title {
+    font-family: Roboto Mono;
+    width: auto;
+    height: 48px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 48px;
+    /* identical to box height, or 171% */
+
+    letter-spacing: -0.233333px;
+
+    color: #000000;
+}
