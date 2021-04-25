@@ -4,18 +4,21 @@
 
 .Left{ 
   width: 23%;
-  height: 100%;
+  height: 100vh;
   float: left;
-  background-color: rosybrown;
+  /*background-color: rosybrown; /* for debug purposes */
   border-collapse: collapse;
   margin-left: 2%;
+  margin-right: 2%;
 }
 
 .Right{ 
-  width: 75%;
-  height: 100%;
+  width: 72.8%;
+  height: 100vh;
   position: relative;
   float: right;
-  background-color: yellow;
+  /*background-color: yellow; /* for debug purposes */
   border-collapse: collapse;
+  border-left: solid;
+  border-width: thin;
 }

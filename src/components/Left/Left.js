@@ -15,8 +15,11 @@ function Left() {
         To use it, simply upload your file and then hit generate.
       </p>
       <UploadButton />
+      <br />
       <UploadMultipleButton />
+      <br />
       <GenerateButton />
+      <br />
       <DownloadButton />
     </div>
   );

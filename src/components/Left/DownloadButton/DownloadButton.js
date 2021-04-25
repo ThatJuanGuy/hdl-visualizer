@@ -1,4 +1,5 @@
 import Button from '@material-ui/core/Button';
+import GetAppIcon from '@material-ui/icons/GetApp';
   
   export default function DownloadButton() {
   
@@ -8,7 +9,9 @@ import Button from '@material-ui/core/Button';
                   style={{color: "#FFFFFF", 
                           backgroundColor: "#D9AF1B"}} 
                   component="label" 
-                  fullWidth>
+                  fullWidth
+                  endIcon={<GetAppIcon />}
+          >
             Download Image
           </Button>
       </div>

@@ -2,9 +2,9 @@ import './Right.css';
 
 function Right() {
   return (
-    <div>
+    <div className="center">
       <p>
-        This is the right side
+        Your image will appear here after clicking the "Draw HDL" button
       </p>
     </div>
   );
