@@ -11,7 +11,7 @@ function Left() {
         HDL Visualizer
       </p>
       <p> 
-        This website generates an images of HDL defined chips. 
+        This website generates images of HDL defined chips. 
         To use it, simply upload your file and then hit generate.
       </p>
       <UploadButton />
