@@ -1,5 +1,5 @@
 import Button from '@material-ui/core/Button';
-import PublishIcon from '@material-ui/icons/Publish';
+import AddIcon from '@material-ui/icons/Add';
   
   export default function UploadMultipleButton() {
   
@@ -9,7 +9,7 @@ import PublishIcon from '@material-ui/icons/Publish';
                   color="primary" 
                   component="label" 
                   fullWidth
-                  endIcon={<PublishIcon />
+                  endIcon={<AddIcon />
           }>
             Upload Other Files
             <input accept=".hdl" multiple type="file" hidden/>

@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
-import PublishIcon from '@material-ui/icons/Publish';
+import AddIcon from '@material-ui/icons/Add';
 import FileButton from '../FileButton/FileButton';
+import HelpText from '../HelpText/HelpText'
 
 export default class UploadButton extends Component {
   state = {fileName: "null"};
 
   handleInput = event => {
     this.setState({fileName: event.target.files[0].name});
+    /* will crash website if they exit out of file select or 
+       hit cancel
+    */
   }
 
   handleRemove = () => {
@@ -17,6 +21,10 @@ export default class UploadButton extends Component {
        leaving it existing. So if the user hits generate after
        think they removed it, it will still generate as if the
        previous file was still displayed
+
+       Adding the same file after removing it will cause an error
+       where the file will not appear as added. Switching to onInput 
+       did not fix this issue.
     */
   }
 
@@ -27,11 +35,15 @@ export default class UploadButton extends Component {
                   color="primary" 
                   component="label" 
                   fullWidth
-                  endIcon={<PublishIcon />}
+                  endIcon={<AddIcon />}
+                  style={{
+                    marginBottom: "1%",
+                }}
           >
             Upload Main File
             <input accept=".hdl" type="file" hidden onChange={this.handleInput}/>
           </Button>
+          <HelpText render={this.state.fileName}/>
           <FileButton fileName={this.state.fileName}
                       handleClick={this.handleRemove}/>
       </div>
