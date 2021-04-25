@@ -37,7 +37,7 @@ export default class UploadButton extends Component {
                   fullWidth
                   endIcon={<AddIcon />}
                   style={{
-                    marginBottom: "1%",
+                    marginBottom: "4px",
                 }}
           >
             Upload Main File
