@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 export default class HelpText extends Component {
   
     render() {
-        if (this.props.render !== "null") {
+        if (this.props.render !== null) {
           return (
             null
           )

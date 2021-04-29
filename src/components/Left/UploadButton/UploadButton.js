@@ -5,7 +5,9 @@ import FileButton from '../FileButton/FileButton';
 import HelpText from '../HelpText/HelpText'
 
 export default class UploadButton extends Component {
-  state = {fileName: "null"};
+  state = {fileName: null,
+           fileContents: null
+          };
 
   handleInput = event => {
     if(event.target.files[0] !== undefined ) {
@@ -14,13 +16,11 @@ export default class UploadButton extends Component {
     else {
       console.log("YEET");
     }
-    /* will crash website if they exit out of file select or 
-       hit cancel
-    */
+    
   }
 
   handleRemove = () => {
-    this.setState({fileName: "null"});
+    this.setState({fileName: null});
     /* Haven't tested because generate doesn't exist yet but
        this could be hiding the file input from the user but 
        leaving it existing. So if the user hits generate after

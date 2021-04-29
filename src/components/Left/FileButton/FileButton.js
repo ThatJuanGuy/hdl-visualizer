@@ -5,7 +5,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 export default class FileButton extends Component {
 
   render() {
-    if (this.props.fileName === "null") {
+    if (this.props.fileName === null) {
       return (
         null
       )
