@@ -8,7 +8,12 @@ export default class UploadButton extends Component {
   state = {fileName: "null"};
 
   handleInput = event => {
-    this.setState({fileName: event.target.files[0].name});
+    if(event.target.files[0] !== undefined ) {
+      this.setState({fileName: event.target.files[0].name});
+    }
+    else {
+      console.log("YEET");
+    }
     /* will crash website if they exit out of file select or 
        hit cancel
     */

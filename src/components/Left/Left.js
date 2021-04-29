@@ -7,7 +7,7 @@ import DownloadButton from './DownloadButton/DownloadButton';
 function Left() {
   return (
     <div>
-      <p class="Title">
+      <p className="Title">
         HDL Visualizer
       </p>
       <p> 
