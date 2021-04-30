@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 export default class HelpText extends Component {
   
     render() {
-        if (this.props.render !== null) {
+        if (this.props.doNotRender) {
           return (
             null
           )
@@ -15,7 +15,7 @@ export default class HelpText extends Component {
                 padding: "3%",
                 borderRadius: "0px 0px 4px 4px"
             }}>
-                Please upload your main file
+                {this.props.text}
             </p>   
           </div>
         )

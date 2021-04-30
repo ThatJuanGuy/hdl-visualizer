@@ -6,7 +6,7 @@ import HelpText from '../HelpText/HelpText'
 
 export default class UploadButton extends Component {
   state = {fileName: null,
-           fileContents: null
+           fileContent: null
           };
   
   handleInput = event => {
@@ -15,11 +15,14 @@ export default class UploadButton extends Component {
       this.setState({fileName: event.target.files[0].name});
       // read the file contents
       var fileReader = new FileReader();
-      fileReader.onloadend = () => {this.setState({fileContents: fileReader.result});}
+      fileReader.onloadend = () => {this.setState({fileContent: fileReader.result});}
+      // this might not be reading the entire file. Will have to test. After testing 
+      // it seems google dev tools was truncating the string as the entire thing 
+      // printed in the console. probably not an issue but something to keep in mind.
       fileReader.readAsText(event.target.files[0]);
       // reset the state of the file reader
       // This is to avoid a bug where it wouldn't register if you 
-      // uploaded the same file twice after reomoving it
+      // uploaded the same file twice after removing it
       event.target.value = "";
     }
   }
@@ -28,7 +31,7 @@ export default class UploadButton extends Component {
 
   handleRemove = () => {
     this.setState({fileName: null,
-                   fileContents:null});
+                   fileContent:null});
     }
 
   render() {
@@ -46,7 +49,8 @@ export default class UploadButton extends Component {
             Upload Main File
             <input accept=".hdl" type="file" hidden onChange={this.handleInput}/>
           </Button>
-          <HelpText render={this.state.fileName}/>
+          <HelpText doNotRender={this.state.fileName} 
+                    text="Please upload your main file. The website will draw this chip"/>
           <FileButton fileName={this.state.fileName}
                       handleClick={this.handleRemove}/>
       </div>

@@ -5,25 +5,25 @@ import DeleteIcon from '@material-ui/icons/Delete';
 export default class FileButton extends Component {
 
   render() {
-    if (this.props.fileName === null) {
+    if (this.props.fileName) {
       return (
-        null
+        <div>
+          <Button variant="contained" 
+                  component="label" 
+                  fullWidth
+                  style={{color: "#000000", 
+                          backgroundColor: "#FFFFFF",
+                  }}
+                  endIcon={<DeleteIcon />}
+                  onClick={this.props.handleClick}
+            >
+            {this.props.fileName}
+          </Button>
+        </div>
       )
     }
     return (
-      <div>
-        <Button variant="contained" 
-                component="label" 
-                fullWidth
-                style={{color: "#000000", 
-                        backgroundColor: "#FFFFFF",
-                }}
-                endIcon={<DeleteIcon />}
-                onClick={this.props.handleClick}
-          >
-          {this.props.fileName}
-        </Button>
-      </div>
+      null
     )
   }
 
