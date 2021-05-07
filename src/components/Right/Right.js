@@ -4,9 +4,14 @@ import './Right.css';
 export default class Right extends Component {
   getDrawingRequestURL() {
     if(this.props.contents) {
-      console.log('draw/' + this.props.contents + '.svg')
-      return 'draw/' + this.props.contents + '.svg';
+      return 'draw/' + this.removeComments(this.props.contents) + '.svg';
     }
+  }
+
+  removeComments(str) {
+    // This function exists because otherwise it wasn't passed correctly
+    // to the flask route for some reason
+    return str.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g,'');
   }
 
   render() {
@@ -31,11 +36,14 @@ export default class Right extends Component {
         </div>
       )
     }
-    this.getDrawingRequestURL();
     return (
       <div className="center">
-        <img src="/draw.svg"
-            alt="Something is broken.">
+        <img src={this.getDrawingRequestURL()}
+            alt="Something is broken. It could be your HDL or our website.
+                 We only support primitive gates (AND, OR, NOT, etc.). Using
+                 other types will not work. If you met the previous conditions and 
+                 the website still isn't working then our server is down for some reason. 
+                 We should probably fix that.">
         </img>
       </div>
     );
