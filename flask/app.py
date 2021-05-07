@@ -13,7 +13,11 @@ from visualize import drawHDL #functions
 from flask import Flask, Response
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../build', static_url_path='/')
+
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
 
 @app.route('/draw/<fileContent>.svg', methods=['GET'])
 def generateDrawing(fileContent):
@@ -21,5 +25,5 @@ def generateDrawing(fileContent):
     figBytes = drawHDL(fileContent)
     return Response(figBytes, mimetype='image/svg+xml')
 
-if __name__ == '__main__':
-    app.run()
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
