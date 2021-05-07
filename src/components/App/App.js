@@ -81,7 +81,11 @@ class App extends Component {
     this.setState({clickedDraw: true});
   }
   ///// Download Button Functions //////////
+  // These were not implemented due to users being able to copy or right
+  // click the image and click "save image as" on the website. Could be added
+  // but like wouldn't provide any functionality. It would like kind of pretty though.
 
+  /////////////////////////////////////////
   render() {
     return (
       <div>

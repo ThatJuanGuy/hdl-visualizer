@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // import GenerateButton from './GenerateButton/GenerateButton';
 import UploadButton from './UploadButton/UploadButton';
 // import UploadMultipleButton from './UploadMultipleButton/UploadMultipleButton';
-import DownloadButton from './DownloadButton/DownloadButton';
+//import DownloadButton from './DownloadButton/DownloadButton';
 export default class Left extends Component {
   render() {
     return (
@@ -14,7 +14,7 @@ export default class Left extends Component {
         <p> 
           This website generates images of HDL defined chips. 
           To use it, simply upload your file. The image will then 
-          automatically generate.
+          automatically generate to the left.
         </p>
         <UploadButton fileName={this.props.fileName}
                       fileContent={this.props.fileContent}
@@ -35,7 +35,11 @@ export default class Left extends Component {
         <br />
 
         */}
+        {/* // Uncomment this to show the Download Button. It currently has no programmed
+            // functionality and does nothing when you click it. 
+
         <DownloadButton />
+        */}
       </div>
     );
   }
