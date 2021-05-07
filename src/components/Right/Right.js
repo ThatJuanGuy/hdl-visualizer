@@ -6,6 +6,9 @@ function Right() {
       <p>
         Your image will appear here after clicking the "Draw HDL" button
       </p>
+      <img src="/draw.svg"
+           alt="Something is broken.">
+      </img>
     </div>
   );
 }
