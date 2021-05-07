@@ -7,7 +7,8 @@ class App extends Component {
   state = {fileName: null,
            fileContent: null,
            fileNames: [],
-           fileContents: []
+           fileContents: [],
+           clickedDraw: false
   };
 
   ///// Upload Button Functions ////////
@@ -23,7 +24,7 @@ class App extends Component {
       // printed in the console. probably not an issue but something to keep in mind.
       fileReader.readAsText(event.target.files[0]);
       // reset the state of the file reader
-      // This is to avoid a bug where it wouldn't register if you 
+      // This is to avoid a bug where it wouldn't recognize an upload if you 
       // uploaded the same file twice after removing it
       event.target.value = "";
     }
@@ -31,7 +32,8 @@ class App extends Component {
 
   handleRemove = () => {
     this.setState({fileName: null,
-                   fileContent:null});
+                   fileContent:null,
+                   clickedDraw: false});
   }
 
   ///// Upload Multiple Button Functions ////////
@@ -75,7 +77,9 @@ class App extends Component {
                    fileContents: this.state.fileContents.filter((item, j) => index !== j)});
   }
   ///// Draw Button Functions //////////////
-
+  handleDraw = () => {
+    this.setState({clickedDraw: true});
+  }
   ///// Download Button Functions //////////
 
   render() {
@@ -87,14 +91,27 @@ class App extends Component {
                 fileContent={this.state.fileContent}
                 handleInput={this.handleInput}
                 handleRemove={() => this.handleRemove()}
-                //UploadMultipleButton
+                //UploadMultipleButton // useless until multiple files are implemented. front end
+                                       // already handles the file upload/removal correctly but it's 
+                                       // just not being used because it made the UI worse and the draw 
+                                       // algorithm didn't support it. To implement this UI there is 
+                                       // no need to change this code. just uncomment the 
+                                       // UploadMultipleButton and GenerateButton Components in Left.js
                 fileNames={this.state.fileNames}
                 fileContents={this.state.fileContents}
                 handleInputMultiple={this.handleInputMultiple}
-                handleRemoveMultiple={this.handleRemoveMultiple}/>
+                handleRemoveMultiple={this.handleRemoveMultiple}
+                //DrawButton
+                handleDraw={this.handleDraw}      
+          />
         </div>
         <div className="Right">
-          <Right />
+          <Right //image and text render
+                 contents={this.state.fileContent}
+                 clicked={this.state.clickedDraw} // useless until multiple files are implemented.
+                                                  // If they are implemented there is no need to change this
+                                                  // code. Just uncomment the render condition in Right.js
+          />
         </div> 
       </div>
     );

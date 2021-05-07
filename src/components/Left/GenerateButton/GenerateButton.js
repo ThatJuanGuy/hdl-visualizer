@@ -14,7 +14,7 @@ import CreateIcon from '@material-ui/icons/Create';
                     component="label" 
                     fullWidth
                     endIcon={<CreateIcon />}
-                    onClick={this.props.handleClick()}
+                    onClick={this.props.handleClick}
             >
               Draw HDL
             </Button>
