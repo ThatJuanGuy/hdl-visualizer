@@ -5,11 +5,6 @@ import UploadButton from './UploadButton/UploadButton';
 import UploadMultipleButton from './UploadMultipleButton/UploadMultipleButton';
 import DownloadButton from './DownloadButton/DownloadButton';
 export default class Left extends Component {
-  
-  handleGenerate = () => {
-    console.log(document);// TODO REMOVE
-  }
-
   render() {
     return (
       <div>
