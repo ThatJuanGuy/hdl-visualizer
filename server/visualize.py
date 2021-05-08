@@ -7,7 +7,7 @@
 # by: Keegan, Dakshika, Derik, Sachin, and Carlos
 
 
-from nand2tetris_hdl_parser-0.1.0 import parse_hdl
+from 'nand2tetris_hdl_parser-0.1.0' import parse_hdl
 import re
 import io
 from topsort import Chip_Graph, Chip_Graph_BFS
