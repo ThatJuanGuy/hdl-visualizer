@@ -21,7 +21,6 @@ def index():
 
 @app.route('/draw/<fileContent>.svg', methods=['GET'])
 def generateDrawing(fileContent):
-    
     figBytes = drawHDL(fileContent)
     return Response(figBytes, mimetype='image/svg+xml')
 
