@@ -1,5 +1,5 @@
 #imports from visualize so this works because they aren't brought in for some reason
-from nand2tetris_hdl_parser import parse_hdl
+from nand2tetris_hdl_parser-0.1.0 import parse_hdl
 import re
 import io
 from topsort import Chip_Graph, Chip_Graph_BFS
