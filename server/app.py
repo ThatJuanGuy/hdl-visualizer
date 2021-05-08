@@ -2,14 +2,14 @@
 from nand2tetris_hdl_parser import parse_hdl
 import re
 import io
-from topsort import Chip_Graph, Chip_Graph_BFS
+from server.topsort import Chip_Graph, Chip_Graph_BFS
 from schemdraw import logic
 from schemdraw import elements
 from schemdraw import Drawing, ImageFormat
 from schemdraw.parsing import logicparse
 from schemdraw.elements import ElementDrawing
 #new imports
-from visualize import drawHDL #functions
+from server.visualize import drawHDL #functions
 from flask import Flask, Response
 import os
 

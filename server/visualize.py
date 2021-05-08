@@ -9,7 +9,7 @@
 from nand2tetris_hdl_parser import parse_hdl
 import re
 import io
-from topsort import Chip_Graph, Chip_Graph_BFS
+from server.topsort import Chip_Graph, Chip_Graph_BFS
 from schemdraw import logic
 from schemdraw import elements
 from schemdraw import Drawing, ImageFormat
