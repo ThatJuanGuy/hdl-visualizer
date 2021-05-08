@@ -13,7 +13,7 @@ from visualize import drawHDL #functions
 from flask import Flask, Response
 import os
 
-application = Flask(__name__, static_folder='../build', static_url_path='/')
+application = Flask(__name__)
 
 @application.route('/')
 def index():
