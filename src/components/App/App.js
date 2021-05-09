@@ -56,8 +56,12 @@ class App extends Component {
 
   handleFileContentMultiple = (event, i, fileContentArr) => {
     // implemented recursively so I could use signals to iterate
-    // probably a really hacky solution and might not work but
-    // from the minimal testing I've done seems to be fine
+    // as file reading is an async function and this way the code
+    // executes and finishes in the correct order. This ensures the name 
+    // and contents of each file correspond to the same index in fileNames
+    // and fileContents. This is probably kind of hacky and there's maybe some 
+    // better way of handling this but from the testing I've done seems 
+    // this seems to be fine.
     if(i < event.target.files.length) {
       var fileReader = new FileReader();
       fileReader.onloadend = () => {fileContentArr.push(fileReader.result);

@@ -24,7 +24,8 @@ export default class Left extends Component {
         {/* // Uncomment to implement UI for multiple file uploads.
             // This UI is already made and working but removed because 
             // drawing algorithm does not support feature. Will require 
-            // updating flask routes to handle subfiles most likely though.
+            // updating flask routes and drawing algorithm
+            // to handle subfiles most likely though.
 
         <UploadMultipleButton fileNames={this.props.fileNames}
                               fileContents={this.props.fileContents}
@@ -36,7 +37,9 @@ export default class Left extends Component {
 
         */}
         {/* // Uncomment this to show the Download Button. It currently has no programmed
-            // functionality and does nothing when you click it. 
+            // functionality and does nothing when you click it. To add functionality, 
+            // define the function in App.js and pass it to this as a prop similarly to how 
+            // the other buttons were implemented. 
 
         <DownloadButton />
         */}

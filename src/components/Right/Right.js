@@ -9,8 +9,8 @@ export default class Right extends Component {
   }
 
   removeComments(str) {
-    // This function exists because otherwise it wasn't passed correctly
-    // to the flask route for some reason
+    // This function exists because otherwise the content wasn't passed correctly
+    // to the flask route for some reason. Probably slashes or something.
     return str.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g,'');
   }
 
